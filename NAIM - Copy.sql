@@ -75,43 +75,4 @@ DELETE FROM Student WHERE id='2019-1-60-303';
 
 
 
--- question 1
-
-create table Instructor(
-        instructor_id VARCHAR2(6),
-        instructor_name VARCHAR2(20),
-        joining_date DATE,
-        salary NUMBER(6,0),
-        PRIMARY KEY(instructor_id),
-        CHECK (joining_date > '01-JAN-2000'),
-        CHECK (salary > 50000 and salary < 500000)             
-);
-
--- question 2
-INSERT INTO Instructor VALUES ('ABC-01', 'Alice', '01-FEB-2001', 120000);
-
-INSERT INTO Instructor VALUES ('ABC-10', 'Bob', '03-MAR-2002', 78000);
-
-INSERT INTO Instructor VALUES ('ABC-21', 'Charlie', '10-JAN-2000', 210000);
-
-
--- question 3
-
-UPDATE Instructor SET salary = 150000 WHERE instructor_id  = 'ABC-01';
-
--- question 4
-
-SELECT * FORM Instructor;
-
---question 5
-
-SELECT instructor_name, salary FROM Instructor;
-
--- question 6
-
-SELECT instructor_name joining_date   FROM Instructor WHERE salary > 100000;
-
--- question 7
-
-DELETE FROM Instructor WHERE instructor_id ='ABC-10';
 
